@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace 写定义的接口名称-->
+<mapper namespace="com/bjpowernode/dao/StudentDao">
+
+    <select id="QueryStudentById" resultType="com.bjpowernode.domain.Student">
+        select id,name,age from tbl_student where id=#{stuid}
+    </select>
+
+    <insert id="InsertStudentInfo">
+        insert into tbl_student values (#{id},#{name},#{age})
+    </insert>
+
+    <select id="QueryAllStudent" resultType="com.bjpowernode.domain.Student">
+        select id,name,age from tbl_student
+    </select>
+</mapper>
+
